@@ -1,0 +1,138 @@
+.hero-wrapper {
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  background-color: var(--primary); /* Maroon */
+  border-radius: var(--radius-xl);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 6rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Add a subtle background pattern/texture if desired */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero-background-circle {
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.15); /* Light translucent circle */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 550px;
+  z-index: 10;
+  color: white;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(250, 204, 21, 0.2);
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: white; /* Added to fix dark text issue */
+}
+
+.text-yellow {
+  color: var(--secondary);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.hero-image-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the image vertically */
+  z-index: 10;
+  height: 100%;
+}
+
+.hero-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%; /* Perfect circle crop */
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 0; 
+  border: 10px solid rgba(255, 255, 255, 0.1); /* Subtle inner ring */
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 3rem;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-background-circle {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem 0 2rem;
+  }
+  
+  .hero-background-circle {
+    top: auto;
+    bottom: -10%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .hero-content {
+    margin-bottom: 3rem;
+  }
+  
+  .hero-image {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,124 @@
+.shop-page {
+  padding: 3rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.shop-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.shop-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.shop-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.shop-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.shop-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  padding: 1.5rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.shop-sidebar h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-btn:hover {
+  background-color: rgba(16, 185, 129, 0.1); /* light primary */
+  color: var(--primary);
+}
+
+.category-btn.active {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.category-count {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.shop-main {
+  flex-grow: 1;
+}
+
+.shop-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.shop-grid-header h2 {
+  font-size: 1.5rem;
+}
+
+.results-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.shop-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.no-products-found {
+  padding: 4rem;
+  text-align: center;
+  color: var(--text-muted);
+  background-color: rgba(0,0,0,0.02);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+  .shop-container {
+    flex-direction: column;
+  }
+  
+  .shop-sidebar {
+    width: 100%;
+    position: static;
+  }
+}
